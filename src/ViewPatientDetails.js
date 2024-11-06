@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import api from 'Config';
+import api from './Config';
 
 function ViewPatientDetails({ patientId }) {
     const [patient, setPatient] = useState(null);

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import api from 'Config';
+import api from './Config';
 
 function AddPatientData({ newPatient }) {
     const [formDetails, setFormDetails] = useState({

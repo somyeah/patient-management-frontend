@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import api from 'Config';
+import api from './Config';
 
 function FetchPatients({ onSelectPatient }) {
     const [patients, setPatients] = useState([]);
