@@ -7,7 +7,7 @@ function ViewPatientDetails({ patientId }) {
     useEffect(() => {
         async function getPatient() {
             try {
-                const response = await axios.get(`/api/patients/${patientId}`);
+                const response = await api.get(`/api/patients/${patientId}`);
                 setPatient(response.data);
             } catch (error) {
                 console.error('Error displaying patient data:', error);
