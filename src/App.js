@@ -25,9 +25,9 @@ import './App.css';
 //export default App;
 
 import React, { useState } from 'react';
-import PatientList from 'PatientList';
-import PatientDetails from 'PatientDetails';
-import PatientForm from 'PatientForm';
+import AddPatientData from 'AddPatientData';
+import ViewPatientDetails from 'ViewPatientDetails';
+import FetchPatients from 'FetchPatients';
 
 function App() {
     const [selectedPatientId, setSelectedPatientId] = useState(null);
@@ -37,18 +37,18 @@ function App() {
     };
 
     const handlePatientAdded = () => {
-        setSelectedPatientId(null);  // Refresh list after adding
+        setSelectedPatientId(null);
     };
 
     return (
         <div>
-            <h1>Patient Management Dashboard</h1>
+            <h1>Patient Management Database</h1>
             <div style={{ display: 'flex', gap: '20px' }}>
                 <div>
-                    <PatientForm onPatientAdded={handlePatientAdded} />
-                    <PatientList onSelectPatient={handleSelectPatient} />
+                    <AddPatientData newPatient={handlePatientAdded} />
+                    <FetchPatients onSelectPatient={handleSelectPatient} />
                 </div>
-                <PatientDetails patientId={selectedPatientId} />
+                <ViewPatientDetails patientId={selectedPatientId} />
             </div>
         </div>
     );
