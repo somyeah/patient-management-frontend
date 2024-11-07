@@ -17,7 +17,7 @@ function AddPatientData({ newPatient }) {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await api.post('/api/patients', formDetails);
+            await api.post('http://localhost:5000/api/patients', formDetails);
             newPatient();
             setFormDetails({
                 name: '',
