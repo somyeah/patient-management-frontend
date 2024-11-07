@@ -1,5 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
+import React, { useState } from 'react';
+import AddPatientData from './AddPatientData';
+import ViewPatientDetails from './ViewPatientDetails';
+import FetchPatients from './FetchPatients';
+
 
 //function App() {
   //return (
@@ -23,11 +28,6 @@ import './App.css';
 //}
 
 //export default App;
-
-import React, { useState } from 'react';
-import AddPatientData from './AddPatientData';
-import ViewPatientDetails from './ViewPatientDetails';
-import FetchPatients from './FetchPatients';
 
 function App() {
     const [selectedPatientId, setSelectedPatientId] = useState(null);

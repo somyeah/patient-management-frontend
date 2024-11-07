@@ -22,7 +22,7 @@ function FetchPatients({ onSelectPatient }) {
             <ul>
                 {patients.map(patient => (
                     <li key={patient.patient_id} onClick={() => onSelectPatient(patient.patient_id)}>
-                        {patient.patient_name} - Status: {patient.status}
+                        {patient.patient_name} -- {patient.status}
                     </li>
                 ))}
             </ul>

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import api from './Config';
 
 function AddPatientData({ newPatient }) {
-    const [formDetails, setFormDetails] = useState({
+    const [patientDetails, setPatientDetails] = useState({
         name: '',
         date_of_birth: '',
         address: '',
@@ -11,15 +11,15 @@ function AddPatientData({ newPatient }) {
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setFormDetails({ ...formDetails, [name]: value });
+        setPatientDetails({ ...patientDetails, [name]: value });
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await api.post('http://localhost:5000/api/patients', formDetails);
+            await api.post('http://localhost:5000/api/patients', patientDetails);
             newPatient();
-            setFormDetails({
+            setPatientDetails({
                 name: '',
                 date_of_birth: '',
                 address: '',
@@ -37,14 +37,14 @@ function AddPatientData({ newPatient }) {
                 type="text"
                 name="name"
                 placeholder="Name"
-                value={formDetails.name}
+                value={patientDetails.name}
                 onChange={handleChange}
                 required
             />
             <input
                 type="date"
                 name="date_of_birth"
-                value={formDetails.date_of_birth}
+                value={patientDetails.date_of_birth}
                 onChange={handleChange}
                 required
             />
@@ -52,11 +52,11 @@ function AddPatientData({ newPatient }) {
                 type="text"
                 name="address"
                 placeholder="Address"
-                value={formDetails.address}
+                value={patientDetails.address}
                 onChange={handleChange}
                 required
             />
-            <select name="status" value={formDetails.status} onChange={handleChange}>
+            <select name="status" value={patientDetails.status} onChange={handleChange}>
                 <option value="Inquiry">Inquiry</option>
                 <option value="Onboarding">Onboarding</option>
                 <option value="Active">Active</option>
