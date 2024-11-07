@@ -7,7 +7,7 @@ function FetchPatients({ onSelectPatient }) {
     useEffect(() => {
         async function getPatients() {
             try {
-                const response = await api.get('http://localhost:5000/api/patients');
+                const response = await api.get('/api/patients');
                 setPatients(response.data);
             } catch (error) {
                 console.error('Error viewing patient and status:', error);
